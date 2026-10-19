@@ -438,6 +438,16 @@
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
+      },
+      "Cars.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Cars.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cars.Domain.dll": {}
+        }
       }
     }
   },
@@ -990,10 +1000,16 @@
         "sqlitepclraw.provider.e_sqlite3.2.1.13.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
+    },
+    "Cars.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Cars.Domain/Cars.Domain.csproj",
+      "msbuildProject": "../Cars.Domain/Cars.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Cars.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.13"
     ]
   },
@@ -1023,7 +1039,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj": {
+              "projectPath": "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
