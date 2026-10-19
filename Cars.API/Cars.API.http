@@ -1,6 +1,60 @@
-@Cars.API_HostAddress = http://localhost:5065
+@Cars.API_HostAddress = http://127.0.0.1:5065
 
 GET {{Cars.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### 1. Pobierz wszystkie samochody (GET)
+GET {{Cars_HostAddress}}/api/cars
+Accept: application/json
+
+###
+
+### 2. Pobierz jeden samochód po ID (GET)
+# (Podmień poniższy ID na taki, który wyświetlił Ci się w liście)
+GET {{Cars_HostAddress}}/api/cars/6c4501a0-6cfd-4829-9de7-59130d6efbba
+Accept: application/json
+
+###
+
+### 3. Dodaj nowy samochód (POST)
+POST {{Cars_HostAddress}}/api/cars
+Content-Type: application/json
+
+{
+  "brand": "Ford",
+  "model": "Focus",
+  "doorsNumber": 5,
+  "luggageCapacity": 350,
+  "engineCapacity": 1596,
+  "fuelType": 0,
+  "productionDate": "2023-05-10T00:00:00Z",
+  "averageFuelConsumption": 6.5,
+  "bodyType": 1
+}
+
+###
+
+### 4. Edytuj samochód (PUT)
+# (Podmień ID na istniejące auto)
+PUT {{Cars_HostAddress}}/api/cars/6c4501a0-6cfd-4829-9de7-59130d6efbba
+Content-Type: application/json
+
+{
+  "brand": "Ford",
+  "model": "Mondeo",
+  "doorsNumber": 5,
+  "luggageCapacity": 500,
+  "engineCapacity": 2000,
+  "fuelType": 1,
+  "productionDate": "2023-05-10T00:00:00Z",
+  "averageFuelConsumption": 7.0,
+  "bodyType": 2
+}
+
+###
+
+### 5. Usuń samochód (DELETE)
+# (Podmień ID na auto, które chcesz usunąć)
+DELETE {{Cars_HostAddress}}/api/cars/6c4501a0-6cfd-4829-9de7-59130d6efbba
