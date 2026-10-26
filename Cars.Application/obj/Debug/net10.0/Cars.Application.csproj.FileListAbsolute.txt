@@ -10,3 +10,9 @@ C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\Cars.Application.dll
 C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\refint\Cars.Application.dll
 C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\Cars.Application.pdb
 C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\ref\Cars.Application.dll
+C:\Users\Klaudia\car\Cars.Application\bin\Debug\net10.0\Cars.Domain.dll
+C:\Users\Klaudia\car\Cars.Application\bin\Debug\net10.0\Cars.Infrastructure.dll
+C:\Users\Klaudia\car\Cars.Application\bin\Debug\net10.0\Cars.Infrastructure.pdb
+C:\Users\Klaudia\car\Cars.Application\bin\Debug\net10.0\Cars.Domain.pdb
+C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\Cars.Application.csproj.AssemblyReference.cache
+C:\Users\Klaudia\car\Cars.Application\obj\Debug\net10.0\Cars.App.3F253AC0.Up2Date

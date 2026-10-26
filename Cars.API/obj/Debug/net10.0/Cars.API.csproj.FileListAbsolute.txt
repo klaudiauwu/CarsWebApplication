@@ -150,3 +150,9 @@ C:\Users\Klaudia\car\Cars.API\obj\Debug\net10.0\refint\Cars.API.dll
 C:\Users\Klaudia\car\Cars.API\obj\Debug\net10.0\Cars.API.pdb
 C:\Users\Klaudia\car\Cars.API\obj\Debug\net10.0\Cars.API.genruntimeconfig.cache
 C:\Users\Klaudia\car\Cars.API\obj\Debug\net10.0\ref\Cars.API.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\FluentValidation.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\MediatR.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\MediatR.Contracts.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\Cars.Application.dll
+C:\Users\Klaudia\car\Cars.API\bin\Debug\net10.0\Cars.Application.pdb

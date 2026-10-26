@@ -1,19 +1,21 @@
+using Cars.Application.Cars;
+using Cars.Application.Common.Behaviors;
+using FluentValidation;
+using MediatR;
 using Cars.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+ using Cars.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
-// Rejestracja bazy danych SQLite (Krok 9)[cite: 11, 12]
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-// Konfiguracja CORS (Krok 9)[cite: 12]
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
@@ -24,9 +26,20 @@ builder.Services.AddCors(options =>
     });
 });
 
-var app = builder.Build();
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(typeof(GetCarsList.Handler).Assembly);
+});
 
-// Automatyczna migracja i seedowanie danych przy starcie aplikacji (Krok 11 i 12)[cite: 13, 14]
+builder.Services.AddValidatorsFromAssemblyContaining<Create.CommandValidator>();
+
+builder.Services.AddTransient(
+    typeof(IPipelineBehavior<,>),
+    typeof(ValidationBehavior<,>));
+
+var app = builder.Build();
+ app.UseMiddleware<ApiExceptionMiddleware>();
+
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 try

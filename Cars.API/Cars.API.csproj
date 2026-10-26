@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.2.0" />
+    <PackageReference Include="MediatR" Version="12.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cars.Domain\Cars.Domain.csproj" />
     <ProjectReference Include="..\Cars.Infrastructure\Cars.Infrastructure.csproj" />
+    <ProjectReference Include="..\Cars.Application\Cars.Application.csproj" />
   </ItemGroup>
 
 </Project>
