@@ -23,6 +23,19 @@
       "productionDate": "2021-03-15",
       "averageFuelConsumption": 6.8,
       "bodyType": 1
+    },
+    {
+      "brand": "Mercedes",
+      "model": "Gw2323",
+      "doorsNumber": 422,
+      "luggageCapacity": 4002,
+      "engineCapacity": 92139,
+      "fuelType": 1,
+      "productionDate": "2026-11-03",
+      "averageFuelConsumption": 6.52,
+      "bodyType": 3,
+      "id": "JJjMTsMs21A"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
