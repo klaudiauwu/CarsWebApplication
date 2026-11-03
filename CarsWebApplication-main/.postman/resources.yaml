@@ -1,0 +1,7 @@
+workspace:
+  id: 8d4ed11d-831f-446d-8d1c-e5b5bdec233b
+cloudResources:
+  environments:
+    ../postman/environments/Cars API.environment.yaml: 59066275-65615565-fb2a-4ada-a995-bb0093bed438
+  globals:
+    ../postman/globals/workspace.globals.yaml: 3f4a7620-5451-4b15-8ff0-19316678b2fb

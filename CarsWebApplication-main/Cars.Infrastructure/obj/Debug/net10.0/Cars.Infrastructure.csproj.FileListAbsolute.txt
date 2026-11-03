@@ -1,0 +1,16 @@
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.AssemblyInfo.cs
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.sourcelink.json
+C:\Users\Klaudia\car\Cars.Infrastructure\bin\Debug\net10.0\Cars.Infrastructure.deps.json
+C:\Users\Klaudia\car\Cars.Infrastructure\bin\Debug\net10.0\Cars.Infrastructure.dll
+C:\Users\Klaudia\car\Cars.Infrastructure\bin\Debug\net10.0\Cars.Infrastructure.pdb
+C:\Users\Klaudia\car\Cars.Infrastructure\bin\Debug\net10.0\Cars.Domain.dll
+C:\Users\Klaudia\car\Cars.Infrastructure\bin\Debug\net10.0\Cars.Domain.pdb
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Inf.3A286ABF.Up2Date
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.dll
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\refint\Cars.Infrastructure.dll
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\Cars.Infrastructure.pdb
+C:\Users\Klaudia\car\Cars.Infrastructure\obj\Debug\net10.0\ref\Cars.Infrastructure.dll
