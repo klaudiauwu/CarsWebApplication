@@ -1160,11 +1160,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Klaudia\\car\\Cars.Application\\Cars.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Application\\Cars.Application.csproj",
       "projectName": "Cars.Application",
-      "projectPath": "C:\\Users\\Klaudia\\car\\Cars.Application\\Cars.Application.csproj",
+      "projectPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Application\\Cars.Application.csproj",
       "packagesPath": "C:\\Users\\Klaudia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Klaudia\\car\\Cars.Application\\obj\\",
+      "outputPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Klaudia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1181,8 +1181,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Klaudia\\car\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Klaudia\\car\\Cars.Infrastructure\\Cars.Infrastructure.csproj"
+            "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Infrastructure\\Cars.Infrastructure.csproj"
             }
           }
         }

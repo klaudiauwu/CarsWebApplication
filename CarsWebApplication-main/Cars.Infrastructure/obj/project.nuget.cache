@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ozurp1F111Y=",
+  "dgSpecHash": "HkiuUXAW8cw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Klaudia\\car\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Klaudia\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.13\\microsoft.data.sqlite.core.10.0.13.nupkg.sha512",
     "C:\\Users\\Klaudia\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.13\\microsoft.entityframeworkcore.10.0.13.nupkg.sha512",

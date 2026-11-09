@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj": {}
+    "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj": {
+    "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
         "projectName": "Cars.Domain",
-        "projectPath": "C:\\Users\\Klaudia\\car\\Cars.Domain\\Cars.Domain.csproj",
+        "projectPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
         "packagesPath": "C:\\Users\\Klaudia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Klaudia\\car\\Cars.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Klaudia\\AppData\\Roaming\\NuGet\\NuGet.Config",
