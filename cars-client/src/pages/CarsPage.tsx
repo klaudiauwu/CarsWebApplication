@@ -5,6 +5,9 @@ import { getCars, deleteCar } from '../services/carService';
 import { useCarUiStore } from '../store/useCarUiStore';
 import CarCard from '../components/CarCard';
 import axios from 'axios';
+import { useAuthStore } from '../store/useAuthStore';
+
+const EMPTY_ARRAY: string[] = [];
 
 export default function CarsPage() {
   const [cars, setCars] = useState<Car[]>([]);
@@ -15,9 +18,15 @@ export default function CarsPage() {
   const setSearchTerm = useCarUiStore((state) => state.setSearchTerm);
   const showFavoritesOnly = useCarUiStore((state) => state.showFavoritesOnly);
   const setShowFavoritesOnly = useCarUiStore((state) => state.setShowFavoritesOnly);
-  const favoriteCarIds = useCarUiStore((state) => state.favoriteCarIds);
   
-  // Krok 17: Pobranie removeFavorite ze store
+  const user = useAuthStore((state) => state.user);
+  const userId = user?.id || user?.email || '';
+  
+  // POPRAWKA: Używamy stabilnej referencji EMPTY_ARRAY zamiast tworzyć nową [] w locie
+  const favoriteCarIds = useCarUiStore(
+    (state) => state.favoriteCarIdsByUser[userId]
+  ) || EMPTY_ARRAY;
+
   const removeFavorite = useCarUiStore((state) => state.removeFavorite);
 
   useEffect(() => {
@@ -60,8 +69,7 @@ export default function CarsPage() {
         const stringId = String(id);
         await deleteCar(stringId); 
         
-        // Krok 17: Usunięcie ze stanu ulubionych po udanym usunięciu z API
-        removeFavorite(stringId); 
+        removeFavorite(userId, stringId);
 
         setCars((currentCars) =>
           currentCars.filter((car) => car.id !== id)
