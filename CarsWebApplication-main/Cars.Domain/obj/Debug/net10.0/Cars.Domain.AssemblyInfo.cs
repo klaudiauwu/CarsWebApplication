@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cars.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc7abcdbfb27f0f28bd3d445d319b6c770401af9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f1df862550f8852ef09791a35229f179c6645a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cars.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cars.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

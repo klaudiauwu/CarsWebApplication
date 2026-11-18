@@ -2,6 +2,8 @@ using Cars.Application.Cars;
 using Cars.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Cars.API.Controllers;
 

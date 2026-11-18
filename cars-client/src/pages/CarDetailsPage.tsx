@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router';
 import type { Car } from '../models/Car';
 import { getCarById } from '../services/carService';
+import axios from 'axios';
+import { useCarUiStore } from '../store/useCarUiStore';
 
 export default function CarDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -9,33 +11,77 @@ export default function CarDetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Pobranie stanu ulubionych i akcji ze store
+  const favoriteCarIds = useCarUiStore((state) => state.favoriteCarIds);
+  const toggleFavorite = useCarUiStore((state) => state.toggleFavorite);
+
   useEffect(() => {
     if (!id) return;
+    
+    const controller = new AbortController();
+
     const fetchCar = async () => {
       try {
         setLoading(true);
-        const data = await getCarById(id);
-        setCar(data);
         setError(null);
-      } catch (err: any) {
-        setError(err.message || 'Błąd podczas pobierania szczegółów samochodu');
+        
+        const data = await getCarById(id, controller.signal);
+        setCar(data);
+      } catch (caughtError) {
+        if (axios.isCancel(caughtError)) {
+          return;
+        }
+
+        if (caughtError instanceof Error) {
+          setError(caughtError.message);
+        } else {
+          setError('Błąd podczas pobierania szczegółów samochodu');
+        }
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchCar();
+
+    return () => {
+      controller.abort();
+    };
   }, [id]);
 
-  if (loading) return <p style={{ color: '#ccc' }}>Ładowanie szczegółów samochodu...</p>;
-  if (error) return <p style={{ color: '#ff4d4d' }}>Błąd: {error}</p>;
-  if (!car) return <p style={{ color: '#ccc' }}>Nie znaleziono samochodu.</p>;
+  if (loading) return <p style={{ color: '#ccc', textAlign: 'center', marginTop: '2rem' }}>Ładowanie szczegółów samochodu...</p>;
+  if (error) return <p style={{ color: '#ff4d4d', textAlign: 'center', marginTop: '2rem' }}>Błąd: {error}</p>;
+  if (!car) return <p style={{ color: '#ccc', textAlign: 'center', marginTop: '2rem' }}>Nie znaleziono samochodu.</p>;
+
+  const isFavorite = favoriteCarIds.includes(String(car.id));
 
   return (
-    <div style={{ maxWidth: '650px', margin: '0 auto' }}>
-      <h2 style={{ color: '#ffffff', marginBottom: '1.5rem', borderBottom: '2px solid #e50914', paddingBottom: '0.4rem', display: 'inline-block' }}>
-        Szczegóły samochodu
-      </h2>
+    <div style={{ maxWidth: '650px', margin: '0 auto', paddingBottom: '2rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', borderBottom: '2px solid #e50914', paddingBottom: '0.4rem' }}>
+        <h2 style={{ color: '#ffffff', margin: 0 }}>
+          Szczegóły samochodu
+        </h2>
+        
+        {/* Przycisk ulubionych w widoku szczegółów */}
+        <button
+          type="button"
+          onClick={() => toggleFavorite(String(car.id))}
+          style={{
+            backgroundColor: isFavorite ? '#e50914' : '#222222',
+            color: '#ffffff',
+            border: '1px solid #444',
+            padding: '0.4rem 0.8rem',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontSize: '0.9rem'
+          }}
+        >
+          {isFavorite ? 'Ulubiony' : 'Ulubione'}
+        </button>
+      </div>
       
       {/* Ciemna, elegancka karta z czerwonym akcentem z boku */}
       <div style={{ 
@@ -50,15 +96,15 @@ export default function CarDetailsPage() {
         gridTemplateColumns: '1fr 1fr',
         gap: '1rem'
       }}>
-        <p style={{ color: '#aaaaaa' }}>Marka: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.brand}</span></p>
-        <p style={{ color: '#aaaaaa' }}>Model: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.model}</span></p>
-        <p style={{ color: '#aaaaaa' }}>Data produkcji: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.productionDate}</span></p>
-        <p style={{ color: '#aaaaaa' }}>Liczba drzwi: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.doorsNumber}</span></p>
-        <p style={{ color: '#aaaaaa' }}>Pojemność bagażnika: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.luggageCapacity} l</span></p>
-        <p style={{ color: '#aaaaaa' }}>Pojemność silnika: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.engineCapacity} cm³</span></p>
-        <p style={{ color: '#aaaaaa' }}>Rodzaj paliwa: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.fuelType}</span></p>
-        <p style={{ color: '#aaaaaa' }}>Średnie zużycie: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.averageFuelConsumption} l/100km</span></p>
-        <p style={{ color: '#aaaaaa', gridColumn: 'span 2' }}>Typ nadwozia: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.bodyType}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Marka: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.brand}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Model: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.model}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Data produkcji: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.productionDate}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Liczba drzwi: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.doorsNumber}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Pojemność bagażnika: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.luggageCapacity} l</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Pojemność silnika: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.engineCapacity} cm³</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Rodzaj paliwa: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.fuelType}</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0 }}>Średnie zużycie: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.averageFuelConsumption} l/100km</span></p>
+        <p style={{ color: '#aaaaaa', margin: 0, gridColumn: 'span 2' }}>Typ nadwozia: <span style={{ color: '#ffffff', fontWeight: 'bold' }}>{car.bodyType}</span></p>
       </div>
 
       <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>

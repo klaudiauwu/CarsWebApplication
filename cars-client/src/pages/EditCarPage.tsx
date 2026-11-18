@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { getCarById, updateCar } from '../services/carService';
 import type { NewCar } from '../models/Car';
+import axios from 'axios';
 
 export default function EditCarPage() {
   const { id } = useParams<{ id: string }>();
@@ -12,20 +13,33 @@ export default function EditCarPage() {
 
   useEffect(() => {
     if (!id) return;
+    
+    const controller = new AbortController();
+
     const fetchCar = async () => {
       try {
         setLoading(true);
-        const data = await getCarById(id);
-        setCar(data);
         setError(null);
+        
+        const data = await getCarById(id, controller.signal);
+        setCar(data);
       } catch (err: any) {
+        if (axios.isCancel(err)) {
+          return;
+        }
         setError(err.message || 'Błąd podczas pobierania danych samochodu');
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchCar();
+
+    return () => {
+      controller.abort();
+    };
   }, [id]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,9 +53,9 @@ export default function EditCarPage() {
     }
   };
 
-  if (loading) return <p style={{ color: '#ccc' }}>Ładowanie danych samochodu...</p>;
-  if (error) return <p style={{ color: '#ff4d4d' }}>Błąd: {error}</p>;
-  if (!car) return <p style={{ color: '#ccc' }}>Nie znaleziono samochodu.</p>;
+  if (loading) return <p style={{ color: '#ccc', textAlign: 'center', marginTop: '2rem' }}>Ładowanie danych samochodu...</p>;
+  if (error) return <p style={{ color: '#ff4d4d', textAlign: 'center', marginTop: '2rem' }}>Błąd: {error}</p>;
+  if (!car) return <p style={{ color: '#ccc', textAlign: 'center', marginTop: '2rem' }}>Nie znaleziono samochodu.</p>;
 
   const inputStyle = {
     width: '100%',

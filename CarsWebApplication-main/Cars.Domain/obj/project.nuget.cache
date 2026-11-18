@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "Kt7DSSY5NdA=",
+  "dgSpecHash": "9nl/buB6/YI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Klaudia\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.3.14\\microsoft.aspnetcore.identity.2.3.14.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "Element PackageReference Microsoft.AspNetCore.Identity nie zostanie oczyszczony. Rozważ usunięcie tego pakietu z zależności, ponieważ prawdopodobnie nie jest on potrzebny.",
+      "projectPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
+      "libraryId": "Microsoft.AspNetCore.Identity",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
