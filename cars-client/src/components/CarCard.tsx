@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import type { Car } from '../models/Car';
 import { useCarUiStore } from '../store/useCarUiStore';
+import { useAuthStore } from '../store/useAuthStore';
 
 interface CarCardProps {
   car: Car;
@@ -8,15 +9,25 @@ interface CarCardProps {
 }
 
 export default function CarCard({ car, onDelete }: CarCardProps) {
-  const isFavorite = useCarUiStore(
-    (state) =>
-      state.favoriteCarIds.includes(
-        String(car.id)
-      )
+  // 1. Pobieramy aktualnie zalogowanego użytkownika[cite: 31, 32]
+  const user = useAuthStore((state) => state.user);
+
+  // 2. Pobieramy cały obiekt ulubionych z magazynu Zustand[cite: 31]
+  const favoriteCarIdsByUser = useCarUiStore(
+    (state) => state.favoriteCarIdsByUser
   );
+
+  // 3. Wybieramy tablicę ulubionych ID dla konkretnego użytkownika[cite: 31]
+  const favoriteCarIds = user
+    ? favoriteCarIdsByUser[user.id] ?? []
+    : [];
+
+  const isFavorite = favoriteCarIds.includes(
+    String(car.id)
+  );
+
   const toggleFavorite = useCarUiStore(
-    (state) =>
-      state.toggleFavorite
+    (state) => state.toggleFavorite
   );
 
   return (
@@ -44,7 +55,12 @@ export default function CarCard({ car, onDelete }: CarCardProps) {
       <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
         <button
           type="button"
-          onClick={() => toggleFavorite(String(car.id))}
+          onClick={() => {
+            // Przekazujemy ID użytkownika oraz ID samochodu[cite: 32]
+            if (user) {
+              toggleFavorite(user.id, String(car.id));
+            }
+          }}
           style={{
             backgroundColor: isFavorite ? '#e50914' : '#222222',
             color: '#ffffff',

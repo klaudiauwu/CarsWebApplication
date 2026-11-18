@@ -4,6 +4,7 @@ import type { Car } from '../models/Car';
 import { getCarById } from '../services/carService';
 import axios from 'axios';
 import { useCarUiStore } from '../store/useCarUiStore';
+import { useAuthStore } from '../store/useAuthStore';
 
 export default function CarDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -11,8 +12,15 @@ export default function CarDetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Pobranie stanu ulubionych i akcji ze store
-  const favoriteCarIds = useCarUiStore((state) => state.favoriteCarIds);
+  // 1. Pobranie aktualnie zalogowanego użytkownika[cite: 33]
+  const user = useAuthStore((state) => state.user);
+
+  // 2. Pobieranie ulubionych przypisanych do ID użytkownika[cite: 33]
+  const favoriteCarIds = useCarUiStore((state) =>
+    user
+      ? state.favoriteCarIdsByUser[user.id] ?? []
+      : []
+  );
   const toggleFavorite = useCarUiStore((state) => state.toggleFavorite);
 
   useEffect(() => {
@@ -67,7 +75,12 @@ export default function CarDetailsPage() {
         {/* Przycisk ulubionych w widoku szczegółów */}
         <button
           type="button"
-          onClick={() => toggleFavorite(String(car.id))}
+          onClick={() => {
+            // Przekazanie ID użytkownika oraz ID auta[cite: 33]
+            if (user) {
+              toggleFavorite(user.id, String(car.id));
+            }
+          }}
           style={{
             backgroundColor: isFavorite ? '#e50914' : '#222222',
             color: '#ffffff',
