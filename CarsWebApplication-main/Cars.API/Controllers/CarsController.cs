@@ -4,9 +4,9 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-
 namespace Cars.API.Controllers;
 
+[Authorize] // <--- Wymaga zalogowania (ważnego tokenu JWT) dla wszystkich endpointów w tym kontrolerze
 public class CarsController : BaseApiController
 {
     private readonly ISender _sender;
@@ -63,6 +63,7 @@ public class CarsController : BaseApiController
         return NoContent();
     }
 
+    [Authorize(Roles = "Admin")] // <--- Usuwanie dozwolone wyłącznie dla użytkowników z rolą Admin
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteCar(Guid id)
     {

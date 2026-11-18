@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9nl/buB6/YI=",
+  "dgSpecHash": "Sy44Qss9xx8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     {
       "code": "NU1510",
       "level": "Warning",
-      "message": "Element PackageReference Microsoft.AspNetCore.Identity nie zostanie oczyszczony. Rozważ usunięcie tego pakietu z zależności, ponieważ prawdopodobnie nie jest on potrzebny.",
+      "message": "Element PackageReference Microsoft.AspNetCore.Identity nie zostanie oczyszczony. Ten pakiet jest automatycznie dostępny i nie musi być jawnie przywoływany. Usuń element PackageReference.",
       "projectPath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\Klaudia\\Downloads\\CarsWebApplication-main\\CarsWebApplication-main\\Cars.Domain\\Cars.Domain.csproj",

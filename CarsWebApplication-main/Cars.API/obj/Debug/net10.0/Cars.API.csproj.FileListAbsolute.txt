@@ -326,3 +326,16 @@ C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.
 C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\bin\Debug\net10.0\Cars.API.staticwebassets.runtime.json
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\bin\Debug\net10.0\Cars.API.runtimeconfig.dev.json
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.lib.module.js
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.js
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.Config.js
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\HotReload\browser-tools-key.public.json
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\HotReload\browser-tools-key.private.json
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\jsmodules\jsmodules.build.manifest.json
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\scopedcss\scopedcss.cache
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\compressed\78xuuw13qg-{0}-tchfgznwy8-tchfgznwy8.gz
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\compressed\kfhg2yobhc-{0}-xlnju8dipz-xlnju8dipz.gz
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\compressed\vb6dhw56ie-{0}-v1vy2to33n-v1vy2to33n.gz
+C:\Users\Klaudia\Downloads\CarsWebApplication-main\CarsWebApplication-main\Cars.API\obj\Debug\net10.0\compressed\r23xsc6uv3-{0}-ysew0n4kjn-ysew0n4kjn.gz
